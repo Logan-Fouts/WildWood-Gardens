@@ -31,15 +31,6 @@ export default function BonsaiClub() {
 
     return (
         <div className="w-screen min-h-screen bg-white relative">
-            <Image
-                src="/images/oldtree.png"
-                alt="Background"
-                width={670}
-                height={500}
-                className="absolute top-0 right-0 z-0"
-                priority
-            />
-
             <div className="relative px-4 sm:px-6 md:px-12 lg:px-24 xl:px-48 transition-all duration-300">
                 <div className="w-full flex justify-center">
                     <Navbar />

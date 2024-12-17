@@ -80,24 +80,34 @@ export default function OurTrees() {
     ];
 
     return (
-        <div className="px-4 sm:px-8 md:px-12 lg:px-48 bg-white flex flex-col items-center min-h-screen pb-12">
+        <div className="bg-white flex flex-col items-center min-h-screen sm:pb-12 sm:px-32 sm:text-left text-center">
+            <Image
+                src="/images/oldtree.png"
+                alt="Background"
+                width={970}
+                height={500}
+                className="absolute top-0 right-0 z-0 sm:block hidden"
+            />
             <Navbar />
-            <div className='flex flex-col items-center max-w-4xl text-center mb-12 px-4'>
-                <H1 className="font-inknut text-3xl sm:text-4xl md:text-5xl mb-8 text-textblue mt-12">
+            <div className='flex flex-col sm:mb-12 sm:mt-56 mt-12 max-w-6xl'>
+                <H1 className="font-inknut text-3xl sm:text-4xl md:text-5xl text-black mt-12">
                     Our Trees
                 </H1>
-                <p className='text-textblue leading-relaxed md:w-10/12 w-full'>
-                    Here at WildWood Gardens, we nurture a diverse collection of both indoor and outdoor bonsai trees,
-                    each with its own unique character and story. From delicate Japanese Maples to robust Junipers,
-                    our carefully curated selection spans species from across the globe. Whether you're drawn to the
+                <h3 className="text-black text-md font-extralight max-w-md md:max-w-lg lg:max-w-xl">
+                    About our available trees species.
+                </h3>
+                <h1 className='text-black text-4xl sm:mt-64 py-8'>About Our Trees</h1>
+                <p className='text-black font-extralight leading-relaxed'>
+                    Here at WildWood Gardens, we nurture a diverse collection of both indoor and outdoor bonsai trees.
+                    From delicate Japanese Maples to robust Junipers,
+                    our selection spans species from across the globe. Whether you're drawn to the
                     cascading branches of a Weeping Willow or the elegant simplicity of a Jade Plant, our trees represent
-                    years of patient cultivation and artistic vision. We take pride in maintaining these living artworks
-                    in our specialized nursery, where each tree receives individual attention to thrive in both traditional
-                    outdoor settings and carefully controlled indoor environments.
+                    years of cultivation and vision. We take pride in maintaining these living artworks
+                    in our specialized nursery, where each tree receives individual attention to thrive.
                 </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 w-full max-w-7xl">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 w-full max-w-6xl sm:p-0 p-2">
                 {trees.map((tree) => (
                     <TreeCard key={tree.id} tree={tree} />
                 ))}

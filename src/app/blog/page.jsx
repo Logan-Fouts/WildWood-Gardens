@@ -43,7 +43,8 @@ export function Blog() {
     }
 
     return (
-        <div className="flex flex-wrap w-full items-center justify-center mt-20">
+        <div className="flex flex-wrap w-full sm:px-36 sm:mt-48">
+            <h1 className="text-black text-4xl py-8">Latest Posts</h1>
             {posts.map((post) => (
                 <BlogCard key={post.id} post={post} />
             ))}
@@ -55,7 +56,7 @@ function BlogCard({ post }) {
     return (
         <Link href={`/blog/${post.slug}`} className="w-full">
             <div className="bg-white rounded-lg shadow-md overflow-hidden
-                transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl m-2 md:m-8 cursor-pointer">
+                transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer mb-8">
                 <div className="relative h-48 md:h-56">
                     <Image
                         src={post.image}
@@ -66,7 +67,7 @@ function BlogCard({ post }) {
                 </div>
                 <div className="p-4">
                     <div className="flex justify-between items-center mb-2">
-                        <h3 className="font-inknut text-lg text-textblue">
+                        <h3 className="font-inknut text-lg font-semibold text-textblue">
                             {post.title}
                         </h3>
                         <span className="text-sm text-gray-500">

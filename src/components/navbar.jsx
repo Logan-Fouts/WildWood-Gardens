@@ -19,10 +19,10 @@ function Navbar() {
     return (
         <>
             <div className='mb-20'></div>
-            <div className={`fixed w-full md:w-3/4 z-50 transition-all duration-300 ${scrolled ? 'top-0' : 'top-10'
+            <div className={`fixed w-full max-w-6xl md:w-full z-50 transition-all duration-300 ${scrolled ? 'top-0' : 'top-10'
                 }`}>
-                <div className={`w-full h-auto flex px-6 bg-offwhite shadow-lg rounded-md justify-between
-                    transition-all duration-1 ${scrolled ? 'shadow-xl' : 'shadow-lg'
+                <div className={`w-full h-auto flex px-6 py-2 bg-white shadow-lg rounded-md justify-between
+                    transition-all duration-1 ${scrolled ? 'shadow-xl py-0' : 'shadow-lg'
                     }`}>
                     <LeftSide />
                     <div className="hidden md:flex w-8/12 justify-between items-center">
@@ -80,8 +80,8 @@ function LeftSide() {
                     quality={75}
                 />
                 <div className="flex-col items-center justify-center text-center">
-                    <h1 className="text-textblue font-semibold text-xl">WildWood</h1>
-                    <h3 className="text-textblue font-semibold -mt-1">Gardens</h3>
+                    <h1 className="text-black font-semibold text-xl">WildWood</h1>
+                    <h3 className="text-black font-semibold -mt-1">Gardens</h3>
                 </div>
             </div>
         </Link>
@@ -90,7 +90,7 @@ function LeftSide() {
 
 function Center() {
     return (
-        <div className="flex items-center text-textblue justify-center space-x-20 underline">
+        <div className="flex items-center text-black justify-center space-x-12 font-extralight">
             <Link href="/our-trees">Our Trees</Link>
             <Link href="/bonsai-club">Bonsai Club</Link>
             <Link href="/shop">Shop</Link>
@@ -102,7 +102,7 @@ function Right() {
     return (
         <div className="flex items-center justify-center">
             <Link href={'/contact'}>
-                <button className='bg-textblue px-3 py-1 rounded-md text-white hover:bg-textblue/90 transition-colors'>
+                <button className='bg-green-500 px-3 py-1 rounded-md text-white hover:bg-textblue/90 transition-colors'>
                     Contact
                 </button>
             </Link>

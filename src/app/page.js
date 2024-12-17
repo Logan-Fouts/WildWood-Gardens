@@ -9,17 +9,17 @@ export default function Home() {
       <Image
         src="/images/oldtree.png"
         alt="Background"
-        width={670}
+        width={970}
         height={500}
-        className="absolute top-0 right-0 z-0"
+        className="absolute top-0 right-0 z-0 hidden sm:block"
       />
 
-      <div className="relative px-4 sm:px-6 md:px-48 transition-all duration-300">
+      <div className="relative px-4 sm:px-6 transition-all duration-300">
         <div className="w-full flex justify-center md:px-72">
           <Navbar />
         </div>
 
-        <div className="container mx-auto mt-12 md:mt-24 px-4 sm:px-6 md:px-8 md:pt-0 pt-32">
+        <div className="container w-full mx-auto max-w-6xl sm:px-16 sm:mt-12 md:mt-48 md:pt-0 sm:pt-32 pt-12 sm:text-left text-center">
           <BonsaiBlog />
         </div>
       </div>
@@ -29,12 +29,12 @@ export default function Home() {
 
 function BonsaiBlog() {
   return (
-    <div className="py-4 md:py-8">
+    <div className="sm:py-4 md:py-16">
       <div className="relative z-10">
-        <H1 className="text-4xl md:text-5xl lg:text-6xl">Bonsai</H1>
-        <H1 className="-mt-4 md:-mt-6 text-4xl md:text-5xl lg:text-6xl">blog</H1>
-        <h3 className="text-textblue text-lg md:text-xl mt-4 max-w-md md:max-w-lg lg:max-w-xl">
-          Whats happening here at WildWood Gardens?
+        <H1 className="text-4xl md:text-5xl lg:text-6xl text-black">Bonsai</H1>
+        <H1 className="-mt-4 md:-mt-6 text-4xl md:text-5xl lg:text-6xl text-black">blog</H1>
+        <h3 className="text-black text-md font-extralight mt-4 max-w-md md:max-w-lg lg:max-w-xl">
+          <p className="inline text-black">Whats happening </p>here at WildWood Gardens?
         </h3>
       </div>
         <Blog />

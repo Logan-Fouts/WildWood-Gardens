@@ -12,7 +12,7 @@ export default {
         foreground: "var(--foreground)",
         offwhite: "#EDECE9",
         textblue: "#0655C4",
-        wenge: "#221B1E"
+        highlightred: "#b82d39"
       },
   },
 },
