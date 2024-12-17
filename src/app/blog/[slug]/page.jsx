@@ -39,11 +39,11 @@ export default function BlogPost({ params }) {
 
     return (
         <div className="w-screen min-h-screen bg-white relative -mt-12 pb-8">
-            <div className="relative px-4 sm:px-6 md:px-12 lg:px-24 xl:px-48 transition-all duration-300">
+            <div className="relative sm:px-6 md:px-12 lg:px-16 xl:px-48 transition-all duration-300">
                 <div className="w-full flex justify-center">
                     <Navbar />
                 </div>
-                <div className="container mx-auto mt-12 md:mt-24 px-4 sm:px-6 md:px-8">
+                <div className="container mt-12 md:mt-24 sm:px-6 md:px-8 2xl:px-64">
                     {isLoading ? (
                         <div className="flex items-center justify-center min-h-[60vh]">
                             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-textblue"></div>
@@ -53,7 +53,7 @@ export default function BlogPost({ params }) {
                             {error || 'Post not found'}
                         </div>
                     ) : (
-                        <article className="relative z-10 bg-white/90 rounded-lg p-6 shadow-lg">
+                        <article className="relative z-10 bg-white/90 rounded-lg p-4 sm:p-6 shadow-lg">
                             <div className="relative w-full h-[400px] mb-8">
                                 <ImageWithFallback
                                     src={post.image}

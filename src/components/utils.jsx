@@ -1,6 +1,6 @@
 const H1 = ({ children, className = "" }) => {
     return (
-        <h1 className={`text-7xl font-bold text-textblue mb-6 p-0 m-0 ${className}`}>
+        <h1 className={`text-7xl font-bold text-black mb-6 p-0 m-0 ${className}`}>
             {children}
         </h1>
     );

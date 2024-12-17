@@ -90,8 +90,11 @@ export default function OurTrees() {
             />
             <Navbar />
             <div className='flex flex-col sm:mb-12 sm:mt-56 mt-12 max-w-6xl'>
-                <H1 className="font-inknut text-3xl sm:text-4xl md:text-5xl text-black mt-12">
-                    Our Trees
+                <H1 className="font-inknut text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black mt-12">
+                    Our
+                </H1>
+                <H1 className="font-inknut text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black -mt-6">
+                    Trees
                 </H1>
                 <h3 className="text-black text-md font-extralight max-w-md md:max-w-lg lg:max-w-xl">
                     About our available trees species.

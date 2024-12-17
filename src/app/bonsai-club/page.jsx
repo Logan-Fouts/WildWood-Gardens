@@ -1,7 +1,5 @@
-// src/app/club/page.jsx
 "use client";
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import Navbar from '@/components/navbar';
 
 export default function BonsaiClub() {
@@ -36,11 +34,21 @@ export default function BonsaiClub() {
                     <Navbar />
                 </div>
 
-                <div className="container mx-auto md:mt-24 px-4 sm:px-6 md:px-8 mt-52">
+                <div className="container mx-auto md:mt-24 sm:px-6 md:px-64 mt-24 pb-8">
                     <div className="relative z-10">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-textblue mb-8">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8">
                             Bonsai Club
                         </h1>
+
+                        {/* New description section */}
+                        <div className="bg-white/90 rounded-lg p-8 shadow-lg mb-8">
+                            <p className="text-gray-700 text-lg leading-relaxed">
+                                Bonsai Club: Your Gateway to Botanical Artistry
+                            </p>
+                            <p className="text-gray-600 mt-4">
+                                Join our vibrant Bonsai Club and immerse yourself in the world of miniature tree cultivation! Our upcoming events offer expert guidance, delicious food, and a welcoming community for bonsai enthusiasts of all skill levels. Whether you're a curious beginner or a seasoned cultivator, we provide hands-on workshops, expert advice, and a chance to connect with fellow tree lovers. Check out our current event details to discover exciting opportunities to grow your bonsai passion!
+                            </p>
+                        </div>
 
                         {isLoading ? (
                             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-textblue"></div>
@@ -48,7 +56,7 @@ export default function BonsaiClub() {
                             <div className="text-red-500">{error}</div>
                         ) : event ? (
                             <div className="bg-white/90 rounded-lg p-8 shadow-lg">
-                                <h2 className="text-3xl font-bold text-textblue mb-6">
+                                <h2 className="text-3xl font-bold text-black mb-6">
                                     {event.title}
                                 </h2>
 

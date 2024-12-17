@@ -32,7 +32,7 @@ function BonsaiBlog() {
     <div className="sm:py-4 md:py-16">
       <div className="relative z-10">
         <H1 className="text-4xl md:text-5xl lg:text-6xl text-black">Bonsai</H1>
-        <H1 className="-mt-4 md:-mt-6 text-4xl md:text-5xl lg:text-6xl text-black">blog</H1>
+        <H1 className="-mt-4 md:-mt-6 text-4xl md:text-5xl lg:text-6xl text-black">journal</H1>
         <h3 className="text-black text-md font-extralight mt-4 max-w-md md:max-w-lg lg:max-w-xl">
           <p className="inline text-black">Whats happening </p>here at WildWood Gardens?
         </h3>
