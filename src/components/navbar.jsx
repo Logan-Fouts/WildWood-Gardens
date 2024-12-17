@@ -48,18 +48,20 @@ function Navbar() {
                         <Link href="/our-trees" className="text-textblue hover:text-textblue/70 transition-colors">
                             Our Trees
                         </Link>
-                        <Link href="/shop" className="text-textblue hover:text-textblue/70 transition-colors">
-                            Shop
-                        </Link>
                         <Link href="/bonsai-club" className="text-textblue hover:text-textblue/70 transition-colors">
                             Bonsai Club
                         </Link>
-                        <button className='bg-textblue px-3 py-1 rounded-md text-white hover:bg-textblue/90 transition-colors w-full'>
-                            Contact
-                        </button>
+                        <Link href="/shop" className="text-textblue hover:text-textblue/70 transition-colors">
+                            Shop
+                        </Link>
+                        <Link href={'/contact'}>
+                            <button className='bg-textblue px-3 py-1 rounded-md text-white hover:bg-textblue/90 transition-colors w-full'>
+                                Contact
+                            </button>
+                        </Link>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     );
 }
@@ -90,8 +92,8 @@ function Center() {
     return (
         <div className="flex items-center text-textblue justify-center space-x-20 underline">
             <Link href="/our-trees">Our Trees</Link>
-            <Link href="/shop">Shop</Link>
             <Link href="/bonsai-club">Bonsai Club</Link>
+            <Link href="/shop">Shop</Link>
         </div>
     );
 }
@@ -99,9 +101,11 @@ function Center() {
 function Right() {
     return (
         <div className="flex items-center justify-center">
-            <button className='bg-textblue px-3 py-1 rounded-md text-white hover:bg-textblue/90 transition-colors'>
-                Contact
-            </button>
+            <Link href={'/contact'}>
+                <button className='bg-textblue px-3 py-1 rounded-md text-white hover:bg-textblue/90 transition-colors'>
+                    Contact
+                </button>
+            </Link>
         </div>
     );
 }

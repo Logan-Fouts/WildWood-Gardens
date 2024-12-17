@@ -14,8 +14,8 @@ export default function Home() {
         className="absolute top-0 right-0 z-0"
       />
 
-      <div className="relative px-4 sm:px-6 md:px-12 lg:px-24 xl:px-48 transition-all duration-300">
-        <div className="w-full flex justify-center">
+      <div className="relative px-4 sm:px-6 md:px-48 transition-all duration-300">
+        <div className="w-full flex justify-center md:px-72">
           <Navbar />
         </div>
 
@@ -34,10 +34,10 @@ function BonsaiBlog() {
         <H1 className="text-4xl md:text-5xl lg:text-6xl">Bonsai</H1>
         <H1 className="-mt-4 md:-mt-6 text-4xl md:text-5xl lg:text-6xl">blog</H1>
         <h3 className="text-textblue text-lg md:text-xl mt-4 max-w-md md:max-w-lg lg:max-w-xl">
-          Whats happening here at WildWood Gardens
+          Whats happening here at WildWood Gardens?
         </h3>
       </div>
-      <Blog />
+        <Blog />
     </div>
   );
 }

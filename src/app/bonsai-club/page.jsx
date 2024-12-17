@@ -45,7 +45,7 @@ export default function BonsaiClub() {
                     <Navbar />
                 </div>
 
-                <div className="container mx-auto mt-12 md:mt-24 px-4 sm:px-6 md:px-8">
+                <div className="container mx-auto md:mt-24 px-4 sm:px-6 md:px-8 mt-52">
                     <div className="relative z-10">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-textblue mb-8">
                             Bonsai Club
