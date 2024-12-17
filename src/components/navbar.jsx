@@ -19,19 +19,17 @@ function Navbar() {
     return (
         <>
             <div className='mb-20'></div>
-            <div className={`fixed w-full md:w-3/4 z-50 transition-all duration-300 ${
-                scrolled ? 'top-0' : 'top-10'
-            }`}>
+            <div className={`fixed w-full md:w-3/4 z-50 transition-all duration-300 ${scrolled ? 'top-0' : 'top-10'
+                }`}>
                 <div className={`w-full h-auto flex px-6 bg-offwhite shadow-lg rounded-md justify-between
-                    transition-all duration-1 ${
-                        scrolled ? 'shadow-xl' : 'shadow-lg'
+                    transition-all duration-1 ${scrolled ? 'shadow-xl' : 'shadow-lg'
                     }`}>
                     <LeftSide />
                     <div className="hidden md:flex w-8/12 justify-between items-center">
                         <Center />
                         <Right />
                     </div>
-                    <button 
+                    <button
                         className="md:hidden flex items-center p-2"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
@@ -44,9 +42,8 @@ function Navbar() {
                 </div>
 
                 {/* Mobile Menu */}
-                <div className={`md:hidden absolute w-full bg-offwhite shadow-lg rounded-b-md transition-all duration-300 ${
-                    isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
-                }`}>
+                <div className={`md:hidden absolute w-full bg-offwhite shadow-lg rounded-b-md transition-all duration-300 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
+                    }`}>
                     <div className="flex flex-col p-4 space-y-4">
                         <Link href="/our-trees" className="text-textblue hover:text-textblue/70 transition-colors">
                             Our Trees
