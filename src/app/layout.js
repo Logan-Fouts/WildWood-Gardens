@@ -1,4 +1,5 @@
 import { Inknut_Antiqua } from 'next/font/google';
+import { ClerkProvider } from '@clerk/nextjs';
 import "./globals.css";
 
 const inknutAntiqua = Inknut_Antiqua({
@@ -16,10 +17,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inknutAntiqua.className}>
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inknutAntiqua.className}>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
