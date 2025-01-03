@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Navbar from '@/components/navbar';
 
-export default function BonsaiClub() {
+export default function BonsaiClub({ showNavBar }) {
     const [event, setEvent] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -30,10 +30,11 @@ export default function BonsaiClub() {
     return (
         <div className="w-screen min-h-screen bg-white relative">
             <div className="relative px-4 sm:px-6 md:px-12 lg:px-24 xl:px-48 transition-all duration-300">
-                <div className="w-full flex justify-center">
-                    <Navbar />
-                </div>
-
+                {showNavBar && (
+                    <div className="w-full flex justify-center">
+                        <Navbar />
+                    </div>
+                )}
                 <div className="container mx-auto md:mt-24 sm:px-6 md:px-64 mt-24 pb-8">
                     <div className="relative z-10">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8">
