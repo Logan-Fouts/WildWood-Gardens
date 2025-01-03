@@ -51,7 +51,7 @@ export default function AdminPage() {
                                 onClick={() => setShowBlogEditor(false)}
                                 className="text-blue-500 hover:underline mr-4"
                             >
-                                &larr; Back
+                                Back
                             </button>
                             <h1 className="text-2xl font-bold">Blog Editor</h1>
                         </header>
@@ -67,7 +67,7 @@ export default function AdminPage() {
                                 onClick={() => setShowClubEditor(false)}
                                 className="text-blue-500 hover:underline mr-4"
                             >
-                                &larr; Back
+                                Back
                             </button>
                             <h1 className="text-2xl font-bold">Club Editor</h1>
                         </header>
