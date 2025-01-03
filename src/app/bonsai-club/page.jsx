@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Navbar from '@/components/navbar';
 
-export default function BonsaiClub({ showNavBar }) {
+export default function BonsaiClub({ showNavBar = true }) {
     const [event, setEvent] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);

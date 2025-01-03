@@ -1,8 +1,10 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { SignedIn, SignedOut, SignInButton, SignOutButton } from "@clerk/nextjs";
 import { Blog } from "../blog/page";
 import BonsaiClub from '../bonsai-club/page';
+import ClubEditor from './editors/club-editor';
+import { BlogEditor } from './editors/blog-editor';
 
 export default function AdminPage() {
     const [showBlogEditor, setShowBlogEditor] = useState(false);
@@ -68,21 +70,5 @@ export default function AdminPage() {
                 </div>
             )}
         </div>
-    );
-}
-
-function BlogEditor() {
-    return (
-        <main className="p-4">
-            <Blog />
-        </main>
-    );
-}
-
-function ClubEditor() {
-    return (
-        <main className="p-4">
-            <BonsaiClub showNavBar={false} />
-        </main>
     );
 }
