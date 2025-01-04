@@ -51,8 +51,6 @@ export default function ClubEditor() {
     return (
         <main className="p-4 max-w-2xl mx-auto text-black">
             <SignedIn>
-                <h2 className="text-2xl font-bold mb-4">Edit Club Event</h2>
-
                 {error && (
                     <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
                         {error}
