@@ -73,7 +73,7 @@ export default function AdminPage() {
                                 <SignOutButton />
                             </div>
                         </header>
-                        <h2 className="text-3xl py-10 text-center font-bold text-gray-800 mb-8 border-b border-gray-200 pb-4">
+                        <h2 className="text-3xl pt-10 text-center font-bold text-gray-800 mb-8 border-b border-gray-200 pb-4">
                             Blog Management
                         </h2>
                         <BlogEditor />

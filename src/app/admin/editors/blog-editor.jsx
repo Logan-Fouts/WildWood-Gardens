@@ -3,6 +3,7 @@ import { Blog } from "@/app/blog/page";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { BlogCreater } from "./blog-creater";
 import { useState } from "react";
+import BlogDeleter from "./blog-deleter";
 
 export function BlogEditor() {
     const [showCreatePost, setShowCreatePost] = useState(false);
@@ -11,7 +12,7 @@ export function BlogEditor() {
     return (
         <main className="text-black">
             <SignedIn>
-                <nav className="bg-white rounded-xl shadow-md border border-gray-100">
+                <nav className="bg-white rounded-xl shadow-md border border-gray-100 md:-mb-32 mb-12">
                     <ul className="flex justify-center gap-12 py-5">
                         <li>
                             <button
@@ -52,6 +53,9 @@ export function BlogEditor() {
                             </div>
                         </div>
                     </div>
+                )}
+                {showDeletePost && (
+                    <BlogDeleter />
                 )}
             </SignedIn>
             <SignedOut>

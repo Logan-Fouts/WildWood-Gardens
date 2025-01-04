@@ -71,3 +71,36 @@ export async function POST(request) {
     );
   }
 }
+
+export async function DELETE(request) {
+  try {
+    const { title } = await request.json();
+    if (!title) {
+      return NextResponse.json(
+        { error: 'Title is required' },
+        { status: 400 }
+      );
+    }
+    const client = await clientPromise;
+    const db = client.db("BonsaiSite");
+    const result = await db.collection("blog posts").updateOne(
+      {}, // empty filter to match the single document
+      {
+        $pull: { posts: { title: title } }
+      }
+    );
+    if (result.modifiedCount === 0) {
+      return NextResponse.json(
+        { error: 'No post matched the title. Deleted 0 posts.' },
+        { status: 404 }
+      );
+    }
+    return NextResponse.json({ success: true, message: 'Successfully deleted the post.' }, { status: 200 });
+  } catch (error) {
+    console.error('Error deleting post:', error);
+    return NextResponse.json(
+      { error: 'Failed to delete post' },
+      { status: 500 }
+    );
+  }
+}
