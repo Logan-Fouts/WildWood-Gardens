@@ -28,7 +28,7 @@ export default function BonsaiClub({ showNavBar = true }) {
     }, []);
 
     return (
-        <div className="w-screen min-h-screen bg-white relative">
+        <div className="w-screen min-h-screen bg-gray-50 relative">
             <div className="relative px-4 sm:px-6 md:px-12 lg:px-24 xl:px-48 transition-all duration-300">
                 {showNavBar && (
                     <div className="w-full flex justify-center">
@@ -37,12 +37,12 @@ export default function BonsaiClub({ showNavBar = true }) {
                 )}
                 <div className="container mx-auto md:mt-24 sm:px-6 mt-24 pb-8 max-w-screen-xl">
                     <div className="relative z-10">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-8">
                             Bonsai Club
                         </h1>
 
                         {/* New description section */}
-                        <div className="bg-white/90 rounded-lg p-8 shadow-lg mb-8">
+                        <div className="bg-white rounded-lg p-8 shadow-lg mb-8">
                             <p className="text-gray-700 text-lg leading-relaxed">
                                 Bonsai Club: Your Gateway to Botanical Artistry
                             </p>
@@ -52,18 +52,18 @@ export default function BonsaiClub({ showNavBar = true }) {
                         </div>
 
                         {isLoading ? (
-                            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-textblue"></div>
+                            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-800"></div>
                         ) : error ? (
                             <div className="text-red-500">{error}</div>
                         ) : event ? (
-                            <div className="bg-white/90 rounded-lg p-8 shadow-lg">
-                                <h2 className="text-3xl font-bold text-black mb-6">
+                            <div className="bg-white rounded-lg p-8 shadow-lg">
+                                <h2 className="text-3xl font-bold text-gray-800 mb-6">
                                     {event.title}
                                 </h2>
 
                                 {/* Date and Time */}
                                 <div className="mb-6">
-                                    <h3 className="text-xl font-semibold mb-2 text-slate-800">When</h3>
+                                    <h3 className="text-xl font-semibold mb-2 text-gray-800">When</h3>
                                     <p className="text-gray-700">
                                         {new Date(event.date.start).toLocaleDateString()} - {new Date(event.date.end).toLocaleDateString()}
                                     </p>
@@ -75,36 +75,28 @@ export default function BonsaiClub({ showNavBar = true }) {
                                 {/* Food */}
                                 {event.food && (
                                     <div className="mb-6">
-                                        <h3 className="text-xl font-semibold mb-2 text-slate-800">Food</h3>
-                                        <p className="text-gray-700">{event.food.description}</p>
+                                        <h3 className="text-xl font-semibold mb-2 text-gray-800">Food</h3>
+                                        <p className="text-gray-700">{event.food}</p>
                                     </div>
                                 )}
 
                                 {/* Pricing */}
-                                <div className="mb-6">
-                                    <h3 className="text-xl font-semibold mb-2 text-slate-800">Pricing</h3>
-                                    <ul className="space-y-2">
-                                        {event.pricing.map((price, index) => (
-                                            <li key={index} className="text-gray-700">
-                                                {price.discount ? (
-                                                    `${price.discount}% off ${price.description}`
-                                                ) : (
-                                                    `$${price.price} ${price.description} ${price.unit || ''}`
-                                                )}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
+                                {event.pricing && (
+                                    <div className="mb-6">
+                                        <h3 className="text-xl font-semibold mb-2 text-gray-800">Pricing</h3>
+                                        <p className="text-gray-700">{event.pricing}</p>
+                                    </div>
+                                )}
 
                                 {/* Location */}
                                 <div className="mb-6">
-                                    <h3 className="text-xl font-semibold mb-2 text-slate-800">Location</h3>
+                                    <h3 className="text-xl font-semibold mb-2 text-gray-800">Location</h3>
                                     <address className="text-gray-700 not-italic">
                                         {event.location.address}<br />
                                         {event.location.city}, {event.location.state} {event.location.zipCode}<br />
                                         <a
                                             href={`tel:${event.location.phone}`}
-                                            className="text-textblue hover:underline"
+                                            className="text-blue-600 hover:underline"
                                         >
                                             {event.location.phone}
                                         </a>
@@ -118,7 +110,7 @@ export default function BonsaiClub({ showNavBar = true }) {
                                     )}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-block bg-textblue text-white px-6 py-3 rounded-lg hover:bg-textblue/90 transition-colors"
+                                    className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
                                 >
                                     Get Directions
                                 </a>

@@ -37,7 +37,7 @@ function BonsaiBlog() {
           <p className="inline text-black">Whats happening </p>here at WildWood Gardens?
         </h3>
       </div>
-        <Blog />
+      <Blog />
     </div>
   );
 }

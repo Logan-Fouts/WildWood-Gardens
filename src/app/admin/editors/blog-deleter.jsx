@@ -2,15 +2,16 @@
 import { Blog } from "@/app/blog/page";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 
-// TODO: Implement Delete Functionality
 export default function BlogDeleter() {
     return (
-        <div>
+        <div className="container mx-auto p-4">
             <SignedIn>
                 <Blog signedIn={true} />
             </SignedIn>
             <SignedOut>
-                Unauthorized
+                <div className="text-red-500 font-bold">
+                    Unauthorized
+                </div>
             </SignedOut>
         </div>
     )

@@ -10,9 +10,9 @@ export function BlogEditor() {
     const [showDeletePost, setShowDeletePost] = useState(false);
 
     return (
-        <main className="text-black">
+        <main className="text-black bg-gray-100 min-h-screen">
             <SignedIn>
-                <nav className="bg-white rounded-xl shadow-md border border-gray-100 md:-mb-32 mb-12">
+                <nav className="bg-white rounded-xl shadow-md border border-gray-200 md:-mb-32 mb-12">
                     <ul className="flex justify-center gap-12 py-5">
                         <li>
                             <button
@@ -40,7 +40,7 @@ export function BlogEditor() {
                     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
                         <div className="bg-white rounded-xl shadow-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto m-4">
                             <div className="sticky top-0 bg-white px-6 py-4 border-b border-gray-200 flex justify-between items-center">
-                                <h2 className="text-2xl font-bold">Create New Post</h2>
+                                <h2 className="text-2xl font-bold">Management Dashboard</h2>
                                 <button
                                     onClick={() => setShowCreatePost(false)}
                                     className="text-gray-500 hover:text-gray-700"
@@ -59,7 +59,9 @@ export function BlogEditor() {
                 )}
             </SignedIn>
             <SignedOut>
-                Unauthorized
+                <div className="text-red-500 font-bold">
+                    Unauthorized
+                </div>
             </SignedOut>
         </main>
     );

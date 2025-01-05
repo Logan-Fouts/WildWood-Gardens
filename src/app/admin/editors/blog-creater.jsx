@@ -79,9 +79,9 @@ export function BlogCreater() {
     };
 
     return (
-        <main className="p-4">
+        <main className="p-4 bg-gray-50 min-h-screen">
             <SignedIn>
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
                     <form onSubmit={handleSubmit} className="space-y-6">
                         {/* Basic Info */}
                         <div className="space-y-4">

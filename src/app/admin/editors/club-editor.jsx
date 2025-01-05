@@ -63,10 +63,10 @@ export default function ClubEditor() {
                     </div>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4 bg-white p-6 rounded-lg shadow-lg">
                     {/* Title */}
                     <div>
-                        <label className="block mb-1">Title</label>
+                        <label className="block mb-1 font-medium text-gray-700">Title</label>
                         <input
                             type="text"
                             value={event.title}
@@ -78,7 +78,7 @@ export default function ClubEditor() {
                     {/* Date */}
                     <div className="grid grid-cols-2 gap-4">
                         <div>
-                            <label className="block mb-1">Start Date</label>
+                            <label className="block mb-1 font-medium text-gray-700">Start Date</label>
                             <input
                                 type="date"
                                 value={event.date.start}
@@ -90,7 +90,7 @@ export default function ClubEditor() {
                             />
                         </div>
                         <div>
-                            <label className="block mb-1">End Date</label>
+                            <label className="block mb-1 font-medium text-gray-700">End Date</label>
                             <input
                                 type="date"
                                 value={event.date.end}
@@ -106,7 +106,7 @@ export default function ClubEditor() {
                     {/* Time */}
                     <div className="grid grid-cols-2 gap-4">
                         <div>
-                            <label className="block mb-1">Start Time</label>
+                            <label className="block mb-1 font-medium text-gray-700">Start Time</label>
                             <input
                                 type="time"
                                 value={event.time.start}
@@ -118,7 +118,7 @@ export default function ClubEditor() {
                             />
                         </div>
                         <div>
-                            <label className="block mb-1">End Time</label>
+                            <label className="block mb-1 font-medium text-gray-700">End Time</label>
                             <input
                                 type="time"
                                 value={event.time.end}
@@ -133,7 +133,7 @@ export default function ClubEditor() {
 
                     {/* Location */}
                     <div className="space-y-2">
-                        <h3 className="font-bold">Location</h3>
+                        <h3 className="font-bold text-gray-700">Location</h3>
                         <input
                             type="text"
                             placeholder="Address"
@@ -188,11 +188,31 @@ export default function ClubEditor() {
                         />
                     </div>
 
+                    {/* Food */}
+                    <div>
+                        <label className="block mb-1 font-medium text-gray-700">Food</label>
+                        <textarea
+                            value={event.food}
+                            onChange={e => setEvent({ ...event, food: e.target.value })}
+                            className="w-full border p-2 rounded text-gray-600"
+                        />
+                    </div>
+
+                    {/* Pricing */}
+                    <div>
+                        <label className="block mb-1 font-medium text-gray-700">Pricing</label>
+                        <textarea
+                            value={event.pricing}
+                            onChange={e => setEvent({ ...event, pricing: e.target.value })}
+                            className="w-full border p-2 rounded text-gray-600"
+                        />
+                    </div>
+
                     {/* Submit Button */}
                     <div className="flex justify-end">
                         <button
                             type="submit"
-                            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
                         >
                             Save Changes
                         </button>
@@ -200,8 +220,10 @@ export default function ClubEditor() {
                 </form>
             </SignedIn>
             <SignedOut>
-                Unauthorized
+                <div className="text-red-500 font-bold">
+                    Unauthorized
+                </div>
             </SignedOut>
-        </main >
+        </main>
     );
 }
