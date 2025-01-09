@@ -1,60 +1,156 @@
+"use client"
+
 import Image from "next/image";
 import Navbar from "@/components/navbar";
 import H1 from "@/components/utils";
-import { Blog } from "./blog/page";
+import Link from 'next/link';
+import { useState, useEffect } from "react";
 
 export default function Home() {
   return (
-    <div className="w-screen min-h-screen bg-white relative">
-      <Image
-        src="/images/oldtree.png"
-        alt="Background"
-        width={970}
-        height={500}
-        className="absolute top-0 right-0 z-0 hidden sm:block"
-      />
+    <div className="w-screen min-h-screen bg-gray-50 relative flex items-center justify-center">
+      <Navbar />
 
       <div className="relative px-4 sm:px-6 transition-all duration-300">
-        <div className="w-full flex justify-center md:px-72">
-          <Navbar />
-        </div>
-
-        <div className="container w-full mx-auto max-w-6xl sm:px-16 sm:mt-12 md:mt-48 md:pt-0 sm:pt-32 pt-12 sm:text-left text-center">
+        <div className="w-screen text-center">
+          <HeroSection />
           <StoreInfo />
         </div>
       </div>
+
     </div>
   );
 }
 
-function StoreInfo() {
+function HeroSection() {
+  const images = [
+    "/images/trees/tree1.jpg",
+    "/images/trees/tree2.jpg",
+    "/images/trees/tree3.jpg",
+    "/images/trees/tree4.jpg",
+    "/images/trees/tree5.jpg",
+  ];
+  const [currentImage, setCurrentImage] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+        setFade(true);
+      }, 500);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
-    <div className="sm:py-4 md:py-16">
-      <div className="relative z-10">
-        <H1 className="text-4xl md:text-5xl lg:text-6xl text-black">Wild</H1>
-        <H1 className="-mt-4 md:-mt-6 text-4xl md:text-5xl lg:text-6xl text-black">Wood</H1>
-        <H1 className="-mt-4 md:-mt-6 text-4xl md:text-5xl lg:text-6xl text-black">Gardens</H1>
-        <h3 className="text-black text-md font-extralight mt-4 max-w-md md:max-w-lg lg:max-w-xl">
-        </h3>
+    <div className="relative py-28 m-0 text-white w-screen">
+      <div className="inset-0">
+        <Image
+          src={images[currentImage]}
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          className={`rounded-lg transition-opacity duration-1000 ${fade ? 'opacity-100' : 'opacity-80'}`}
+        />
+        <div className="absolute inset-0 bg-green-900 opacity-70"></div>
       </div>
-      <div className="md:mt-52 mt-16 text-gray-700 text-left pb-8">
-        <h1 className="text-4xl text-black pb-4">About us</h1>
-        <p className="mb-4">
-          Welcome to Wild Wood Gardens, your local bonsai store dedicated to the art and beauty of bonsai trees. We offer a wide variety of bonsai trees, tools, and accessories to help you create and maintain your own miniature masterpieces.
+      <div className="relative z-10 text-center">
+        <H1 className="text-5xl md:text-6xl lg:text-7xl text-white pt-16">Welcome to Wild Wood Gardens</H1>
+        <p className="mt-4 text-lg md:text-xl lg:text-2xl">
+          Your local bonsai store dedicated to the art and beauty of bonsai trees.
         </p>
-        <p className="mb-4">
-          Our journey began over 20 years ago with a passion for bonsai and a dream to share this ancient art form with our community. Over the years, we have grown from a small hobbyist shop to a full-fledged bonsai nursery, offering a diverse selection of bonsai trees and supplies.
-        </p>
-        <p className="mb-4">
-          At Wild Wood Gardens, we believe in the therapeutic and meditative benefits of bonsai cultivation. Our mission is to provide a tranquil space where enthusiasts of all levels can explore, learn, and grow their bonsai skills.
-        </p>
-        <p className="mb-4">
-          We host regular workshops and classes to help you learn the techniques and skills needed to care for your bonsai. Our knowledgeable staff is always here to assist you with any questions or needs you may have.
-        </p>
-        <p className="mb-4">
-          Visit us today to explore our collection and discover the perfect bonsai tree for your home or garden. Whether you are a beginner looking to start your bonsai journey or an experienced enthusiast seeking rare and unique specimens, we have something for everyone.
-        </p>
+        <Link href="/our-trees">
+          <button className="mt-8 px-6 py-3 bg-white text-green-800 rounded-lg shadow hover:bg-gray-200 transition-colors">
+            Explore Our Collection
+          </button>
+        </Link>
       </div>
     </div>
+  );
+}
+//TODO: Fix horizontal scrolling
+function StoreInfo() {
+  return (
+    <div className="flex-col -mt-16 md:pl-16 md:pr-16 p-0 w-full">
+      <div className="p-4 pt-16 md:p-24 w-full max-w-6xl mx-auto">
+        <div className="mt-12 text-gray-800 text-left pb-8">
+          <h1 className="text-5xl text-center text-green-800 md:pb-4 pb-8">Our Story</h1>
+          <div className="flex flex-col md:flex-row mb-4">
+            <p className="md:w-1/2 md:p-2 md:pb-0 pb-8">
+              Welcome to Wildwood Gardens, founded by Bonsai Master Anthony (Tony) Mihalic. Tony has been growing, teaching, and amazing audiences with his bonsai talents since 1946! He specializes in rock and forest styles of bonsai known as SAIKEI. With decades of experience, Tony has established himself as a master of these intricate Japanese horticultural art forms.
+            </p>
+            <p className="md:w-1/2 md:p-2">
+              Now entering its 69th year, Wildwood Gardens continues through two generations of bonsai expertise. Frank specializes in the single tree styles associated with bonsai in the United States and routinely travels Far East to perfect his skills with various bonsai masters and growers. Tony, Joann, and Frank remain dedicated to sharing their knowledge, always available to answer questions and provide expert advice in the art of bonsai.
+            </p>
+          </div>
+
+          <div className="flex flex-col mb-4 shadow-lg p-4 rounded bg-green-50 bg-opacity-50">
+            <h2 className="text-3xl text-green-800 pb-4 md:text-left text-center">Awards and Recognition</h2>
+            <div className="flex flex-col md:flex-row place-items-center md:items-start">
+              <p className="md:mr-4 md:w-3/4 pb-4">
+                In 1999, Tony received an award from The Korean National Bonsai Association and the Midwest Bonsai Association for his 53 years of teaching and practicing the art of bonsai. In 2001, he was awarded the Bonsai Spotlight Award from Bonsai Online Magazine, honoring masters from around the world. In 2015, Tony celebrated his 69th year practicing the ancient art of bonsai.
+              </p>
+              <Image
+                src={"/images/about-us/awards.jpg"}
+                alt={"Awards"}
+                width={400}
+                height={400}
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col mb-4 shadow-lg p-4 rounded">
+            <h2 className="text-3xl text-green-800 pb-4 md:text-left text-center">Ichiban Publishing</h2>
+            <div className="flex flex-col md:flex-row place-items-center md:items-start">
+              <Image
+                src={"/images/about-us/publishing.png"}
+                alt={"Ichiban Publishing"}
+                width={900}
+                height={300}
+                className="rounded-lg md:mr-4 pb-4"
+              />
+              <p className="md:mr-4">
+                In 1979, Frank Mihalic founded “Ichiban Publishing,” a company dedicated to bonsai-related materials. He wrote and published “The Art of Bonsai-CD ROM” (the first CD on bonsai in the world!), “The Art of Bonsai-VHS Video & DVD,” “The Art of Bonsai-Book,” “Bonsai Screen Saver Computer CD ROM,” “Bonsai Online Magazine-Internet Magazine & Back Issue CD ROM” (the first internet bonsai magazine in the world!), and “Bonsai for Kids-Children's Instructional Bonsai Book” in multiple languages.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col mb-4 shadow-lg p-4 rounded bg-green-50 bg-opacity-50">
+            <h2 className="text-3xl text-green-800 pb-4 md:text-left text-center">Global Recognition</h2>
+            <div className="flex flex-col md:flex-row">
+              <p className="md:mr-4 md:w-3/4 pb-4">
+                Frank's bonsai trees have been recognized globally, with his trees selected as one of the top one hundred bonsai trees in the world in 1999, 2001, and 2006 by Japan Airlines & the Nippon Bonsai Associations. In 2000, he was awarded a special membership in the Cheju Bonsai Growers Association in Korea.
+              </p>
+              <Image
+                src={"/images/about-us/global.jpg"}
+                alt={"Global Recognition"}
+                width={400}
+                height={300}
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col mb-4 shadow-lg p-4 rounded">
+            <h2 className="text-3xl text-green-800 pb-4 md:text-left text-center">Pioneering Bonsai Education</h2>
+            <div className="flex flex-col md:flex-row">
+              <Image
+                src={"/images/about-us/magazine.png"}
+                alt={"Bonsai Education"}
+                width={500}
+                height={300}
+                className="rounded-lg md:mr-4 pb-4"
+              />
+              <p>
+                Frank also founded the first bonsai magazine on the internet in 2001 and published the first bonsai book and CD ROM for children. He has been elected to the Board of Directors of the American Bonsai Society and Bonsai Clubs International multiple times.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div >
   );
 }
