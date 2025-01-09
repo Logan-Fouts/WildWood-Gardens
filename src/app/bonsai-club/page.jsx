@@ -41,14 +41,22 @@ export default function BonsaiClub({ showNavBar = true }) {
                             Bonsai Club
                         </h1>
 
-                        {/* New description section */}
-                        <div className="bg-white rounded-lg p-8 shadow-lg mb-8">
-                            <p className="text-gray-700 text-lg leading-relaxed">
-                                Bonsai Club: Your Gateway to Botanical Artistry
-                            </p>
-                            <p className="text-gray-600 mt-4">
-                                Join our vibrant Bonsai Club and immerse yourself in the world of miniature tree cultivation! Our upcoming events offer expert guidance, delicious food, and a welcoming community for bonsai enthusiasts of all skill levels. Whether you're a curious beginner or a seasoned cultivator, we provide hands-on workshops, expert advice, and a chance to connect with fellow tree lovers. Check out our current event details to discover exciting opportunities to grow your bonsai passion!
-                            </p>
+                        <div className="bg-white rounded-lg p-8 shadow-lg mb-8 flex flex-col md:flex-row items-center">
+                            <div className="md:w-2/3 w-full md:pr-8">
+                                <p className="text-gray-700 text-lg leading-relaxed text-center md:text-left">
+                                    Your Gateway to Botanical Artistry
+                                </p>
+                                <p className="text-gray-600 mt-4">
+                                    Join our vibrant Bonsai Club and immerse yourself in the world of miniature tree cultivation! Our upcoming events offer expert guidance, delicious food, and a welcoming community for bonsai enthusiasts of all skill levels. Whether you're a curious beginner or a seasoned cultivator, we provide hands-on workshops, expert advice, and a chance to connect with fellow tree lovers. Check out our current event details to discover exciting opportunities to grow your bonsai passion!
+                                </p>
+                            </div>
+                            <div className="md:w-1/3 w-full mt-4 md:mt-0">
+                                <img
+                                    src="/images/club/wwgclub.jpg"
+                                    alt="Bonsai Club"
+                                    className="w-full h-auto rounded-lg shadow-lg"
+                                />
+                            </div>
                         </div>
 
                         {isLoading ? (
@@ -61,7 +69,6 @@ export default function BonsaiClub({ showNavBar = true }) {
                                     {event.title}
                                 </h2>
 
-                                {/* Date and Time */}
                                 <div className="mb-6">
                                     <h3 className="text-xl font-semibold mb-2 text-gray-800">When</h3>
                                     <p className="text-gray-700">
@@ -72,7 +79,6 @@ export default function BonsaiClub({ showNavBar = true }) {
                                     </p>
                                 </div>
 
-                                {/* Food */}
                                 {event.food && (
                                     <div className="mb-6">
                                         <h3 className="text-xl font-semibold mb-2 text-gray-800">Food</h3>
@@ -80,7 +86,6 @@ export default function BonsaiClub({ showNavBar = true }) {
                                     </div>
                                 )}
 
-                                {/* Pricing */}
                                 {event.pricing && (
                                     <div className="mb-6">
                                         <h3 className="text-xl font-semibold mb-2 text-gray-800">Pricing</h3>
@@ -88,7 +93,6 @@ export default function BonsaiClub({ showNavBar = true }) {
                                     </div>
                                 )}
 
-                                {/* Location */}
                                 <div className="mb-6">
                                     <h3 className="text-xl font-semibold mb-2 text-gray-800">Location</h3>
                                     <address className="text-gray-700 not-italic">
@@ -103,7 +107,6 @@ export default function BonsaiClub({ showNavBar = true }) {
                                     </address>
                                 </div>
 
-                                {/* Map Button */}
                                 <a
                                     href={`https://maps.google.com/?q=${encodeURIComponent(
                                         `${event.location.address}, ${event.location.city}, ${event.location.state} ${event.location.zipCode}`
