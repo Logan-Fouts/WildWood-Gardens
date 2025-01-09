@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Navbar from '@/components/navbar';
 import H1 from '@/components/utils';
 
+// TODO: Move to data file so user can update easily.
 export default function OurTrees() {
-    // TODO: Move to data file so user can update easily.
     const trees = [
         {
             id: 1,
