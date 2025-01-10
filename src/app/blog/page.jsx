@@ -55,7 +55,9 @@ export function Blog({ signedIn = false }) {
     );
 }
 
+
 function BlogCard({ post, signedIn }) {
+    const [message, setMessage] = useState('');
 
     async function deletePost(title) {
         try {
@@ -69,13 +71,14 @@ function BlogCard({ post, signedIn }) {
             const data = await response.json();
             if (response.ok) {
                 setMessage("Post deleted successfully!");
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
             } else {
                 setMessage(data.error || "Failed to delete post");
             }
         } catch (error) {
             setMessage("Error deleting post");
-        } finally {
-            setIsSubmitting(false);
         }
     }
 
@@ -86,6 +89,11 @@ function BlogCard({ post, signedIn }) {
                     <button onClick={() => deletePost(post.title)} className="rounded bg-red-500 p-1 mb-4 hover:ring">Delete</button>
                 )}
             </SignedIn>
+            {message && (
+                <div className="text-center text-red-500 mb-4">
+                    {message}
+                </div>
+            )}
             <Link href={`/blog/${post.slug}`} className="w-full">
                 <div className="bg-white rounded-lg shadow-md overflow-hidden
                     transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer mb-8">
