@@ -1,5 +1,4 @@
 "use client"
-import { Blog } from "@/app/blog/page";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { useState } from "react";
 import { CldUploadWidget } from "next-cloudinary";
