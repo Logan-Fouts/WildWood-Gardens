@@ -7,7 +7,7 @@ export default function OurTrees() {
     const trees = [
         {
             id: 1,
-            name: "Japanese Maple",
+            name: "Blue Spruce",
             image: "/images/trees/tree1.jpg",
             description: "A beautiful deciduous tree known for its delicate leaves and vibrant autumn colors"
         },
