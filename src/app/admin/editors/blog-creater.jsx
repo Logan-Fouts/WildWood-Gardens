@@ -97,7 +97,7 @@ export function BlogCreater() {
                             </div>
 
                             <div>
-                                <CldUploadWidget uploadPreset="blog image" onUpload={(result) => setImage(result.info.secure_url)}>
+                                <CldUploadWidget uploadPreset="blog image" onSuccess={(result) => setImage(result.info.secure_url)}>
                                     {({ open }) => {
                                         return (
                                             <button type="button" onClick={() => open()} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
