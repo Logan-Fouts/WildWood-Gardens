@@ -3,6 +3,8 @@
 import Navbar from "@/components/navbar";
 import StoreHistory from "@/components/history";
 import HeroSection from "@/components/Hero";
+// import { CldImage } from "next-cloudinary";
+
 
 export default function Home() {
   return (
@@ -11,6 +13,11 @@ export default function Home() {
 
       <div className="relative px-4 sm:px-6 transition-all duration-300">
         <div className="w-screen text-center">
+          {/* <CldImage
+            src="samples/man-portrait" // Use this sample image or upload your own via the Media Explorer
+            width="500" // Transform the image: auto-crop to square aspect_ratio
+            height="500"
+          /> */}
           <HeroSection />
           <StoreHistory />
         </div>

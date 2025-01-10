@@ -1,11 +1,11 @@
 "use client"
 
-import Image from "next/image";
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { SignedIn } from "@clerk/nextjs";
+import { CldImage } from "next-cloudinary";
 
-export function Blog({ signedIn = false }) {
+export default function Blog({ signedIn = false }) {
     const [posts, setPosts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -80,7 +80,6 @@ function BlogCard({ post, signedIn }) {
     }
 
     return (
-
         <div className="w-screen">
             <SignedIn>
                 {signedIn && (
@@ -91,11 +90,12 @@ function BlogCard({ post, signedIn }) {
                 <div className="bg-white rounded-lg shadow-md overflow-hidden
                     transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer mb-8">
                     <div className="relative h-48 md:h-56">
-                        <Image
+                        <CldImage
                             src={post.image}
                             alt={post.title}
-                            fill
-                            className="object-cover"
+                            className="object-cover w-full h-full"
+                            width="500"
+                            height="500"
                         />
                     </div>
                     <div className="p-4">

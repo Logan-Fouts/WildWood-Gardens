@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Navbar from "@/components/navbar";
 import H1 from "@/components/utils";
-import { Blog } from "../blog/page";
+import Blog from "../blog/page";
 
 export default function Home() {
   return (

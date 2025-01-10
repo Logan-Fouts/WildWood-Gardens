@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Navbar from '@/components/navbar';
+import Link from 'next/link';
+import { CldImage } from 'next-cloudinary';
 
 export default function BlogPost({ params }) {
     const [post, setPost] = useState(null);
@@ -54,13 +56,16 @@ export default function BlogPost({ params }) {
                         </div>
                     ) : (
                         <article className="relative z-10 bg-white/90 rounded-lg p-4 sm:p-6 shadow-lg">
+                            <Link href="/store-blog" className="text-xl text-blue-600">
+                                ← Back
+                            </Link>
                             <div className="relative w-full h-[400px] mb-8">
-                                <ImageWithFallback
+                                <CldImage
                                     src={post.image}
                                     alt={post.title}
-                                    fill
-                                    className="object-cover rounded-lg"
-                                    priority
+                                    className="object-cover rounded-lg w-full"
+                                    width="500"
+                                    height="500"
                                 />
                             </div>
                             <h1 className="text-3xl font-bold mb-4 text-textblue">{post.title}</h1>
@@ -89,12 +94,13 @@ function RenderContent({ content }) {
         case 'image':
             return (
                 <div className="my-8">
-                    <div className="relative w-full h-[300px]">
-                        <ImageWithFallback
+                    <div className="relative w-full h-0 pb-[56.25%]">
+                        <CldImage
                             src={content.src}
                             alt={content.alt}
-                            fill
-                            className="object-cover rounded-lg"
+                            className="absolute top-0 left-0 object-cover rounded-lg w-full h-full"
+                            width="500"
+                            height="500"
                         />
                     </div>
                     {content.caption && (
@@ -117,29 +123,4 @@ function RenderContent({ content }) {
         default:
             return null;
     }
-}
-
-function ImageWithFallback({ src, alt, ...props }) {
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(false);
-
-    return (
-        <div className="relative w-full h-full">
-            {isLoading && (
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-50 rounded-lg">
-                    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-textblue"></div>
-                </div>
-            )}
-            <Image
-                src={error ? '/images/placeholder.jpg' : src}
-                alt={alt}
-                {...props}
-                onLoadingComplete={() => setIsLoading(false)}
-                onError={() => {
-                    setError(true);
-                    setIsLoading(false);
-                }}
-            />
-        </div>
-    );
 }
