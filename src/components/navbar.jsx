@@ -51,8 +51,8 @@ function Navbar() {
                         <Link href="/bonsai-club" className="text-textblue hover:text-textblue/70 transition-colors">
                             Bonsai Club
                         </Link>
-                        <Link href="/shop" className="text-textblue hover:text-textblue/70 transition-colors">
-                            Shop
+                        <Link href="/store-blog" className="text-textblue hover:text-textblue/70 transition-colors">
+                            Blog
                         </Link>
                         <Link href={'/contact'}>
                             <button className='bg-textblue px-3 py-1 rounded-md text-white hover:bg-textblue/90 transition-colors w-full'>
@@ -93,7 +93,7 @@ function Center() {
         <div className="flex items-center text-black justify-center space-x-12 font-extralight">
             <Link href="/our-trees">Our Trees</Link>
             <Link href="/bonsai-club">Bonsai Club</Link>
-            <Link href="/shop">Shop</Link>
+            <Link href="/store-blog">Blog</Link>
         </div>
     );
 }

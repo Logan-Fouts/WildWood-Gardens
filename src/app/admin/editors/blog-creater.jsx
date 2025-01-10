@@ -1,7 +1,7 @@
 "use client"
-import { Blog } from "@/app/blog/page";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { useState } from "react";
+import { CldUploadWidget } from "next-cloudinary";
 
 export function BlogCreater() {
     const [title, setTitle] = useState("");
@@ -97,15 +97,15 @@ export function BlogCreater() {
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium mb-1">Image Path</label>
-                                <input
-                                    type="text"
-                                    value={image}
-                                    onChange={(e) => setImage(e.target.value)}
-                                    className="w-full p-2 border rounded"
-                                    placeholder="/images/blog/your-image.jpg"
-                                    required
-                                />
+                                <CldUploadWidget uploadPreset="blog image" onSuccess={(result) => setImage(result.info.secure_url)}>
+                                    {({ open }) => {
+                                        return (
+                                            <button type="button" onClick={() => open()} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+                                                Upload an Image
+                                            </button>
+                                        );
+                                    }}
+                                </CldUploadWidget>
                             </div>
 
                             <div>
