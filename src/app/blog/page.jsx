@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { SignedIn } from "@clerk/nextjs";
 import { CldImage } from "next-cloudinary";
 
-export default function Blog({ signedIn = false }) {
+export function Blog({ signedIn = false }) {
     const [posts, setPosts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);

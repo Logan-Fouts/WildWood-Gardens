@@ -59,11 +59,11 @@ export default function BlogPost({ params }) {
                             <Link href="/store-blog" className="text-xl text-blue-600">
                                 ← Back
                             </Link>
-                            <div className="relative w-full h-[400px] mb-8">
+                            <div className="relative w-full h-0 pb-[56.25%] mb-8">
                                 <CldImage
                                     src={post.image}
                                     alt={post.title}
-                                    className="object-cover rounded-lg w-full"
+                                    className="absolute top-0 left-0 object-cover rounded-lg w-full h-full"
                                     width="500"
                                     height="500"
                                 />
