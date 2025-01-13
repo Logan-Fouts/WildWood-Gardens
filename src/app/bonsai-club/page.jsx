@@ -72,7 +72,7 @@ export default function BonsaiClub({ showNavBar = true }) {
                                 <div className="mb-6">
                                     <h3 className="text-xl font-semibold mb-2 text-gray-800">When</h3>
                                     <p className="text-gray-700">
-                                        {new Date(event.date.start).toLocaleDateString()} - {new Date(event.date.end).toLocaleDateString()}
+                                        Meeting 2nd sunday of each month.
                                     </p>
                                     <p className="text-gray-700">
                                         {event.time.start} - {event.time.end}
