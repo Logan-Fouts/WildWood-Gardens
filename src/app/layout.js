@@ -1,5 +1,6 @@
 import { Inknut_Antiqua } from 'next/font/google';
 import { ClerkProvider } from '@clerk/nextjs';
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const inknutAntiqua = Inknut_Antiqua({
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body className={inknutAntiqua.className}>
           {children}
+	  <Analytics />
         </body>
       </html>
     </ClerkProvider>
