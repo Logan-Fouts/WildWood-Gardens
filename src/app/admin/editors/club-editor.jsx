@@ -75,40 +75,13 @@ export default function ClubEditor() {
                         />
                     </div>
 
-                    {/* Date */}
-                    <div className="grid grid-cols-2 gap-4">
-                        <div>
-                            <label className="block mb-1 font-medium text-gray-700">Start Date</label>
-                            <input
-                                type="date"
-                                value={event.date.start}
-                                onChange={e => setEvent({
-                                    ...event,
-                                    date: { ...event.date, start: e.target.value }
-                                })}
-                                className="w-full border p-2 rounded text-gray-600"
-                            />
-                        </div>
-                        <div>
-                            <label className="block mb-1 font-medium text-gray-700">End Date</label>
-                            <input
-                                type="date"
-                                value={event.date.end}
-                                onChange={e => setEvent({
-                                    ...event,
-                                    date: { ...event.date, end: e.target.value }
-                                })}
-                                className="w-full border p-2 rounded text-gray-600"
-                            />
-                        </div>
-                    </div>
-
                     {/* Time */}
                     <div className="grid grid-cols-2 gap-4">
                         <div>
                             <label className="block mb-1 font-medium text-gray-700">Start Time</label>
                             <input
-                                type="time"
+                                type="text"
+                                placeholder="hh:mm AM/PM"
                                 value={event.time.start}
                                 onChange={e => setEvent({
                                     ...event,
@@ -120,7 +93,8 @@ export default function ClubEditor() {
                         <div>
                             <label className="block mb-1 font-medium text-gray-700">End Time</label>
                             <input
-                                type="time"
+                                type="text"
+                                placeholder="hh:mm AM/PM"
                                 value={event.time.end}
                                 onChange={e => setEvent({
                                     ...event,
