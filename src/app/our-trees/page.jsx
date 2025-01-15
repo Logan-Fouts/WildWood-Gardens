@@ -7,75 +7,75 @@ export default function OurTrees() {
     const trees = [
         {
             id: 1,
-            name: "Blue Spruce",
+            name: "San Jose Juniper",
             image: "/images/trees/tree1.jpg",
-            description: "A beautiful deciduous tree known for its delicate leaves and vibrant autumn colors"
+            description: "Classic evergreen bonsai with gnarled trunk and lush foliage"
         },
         {
             id: 2,
-            name: "Chinese Elm",
+            name: "Pyracantha",
             image: "/images/trees/tree2.jpg",
-            description: "Elegant tree with small leaves, perfect for indoor bonsai cultivation"
+            description: "Deciduous tree with white flowers and red berries, ideal for outdoor display"
         },
         {
             id: 3,
-            name: "Juniper Procumbens",
+            name: "Myers Juniper",
             image: "/images/trees/tree3.jpg",
-            description: "Classic evergreen bonsai with cascading branches and blue-green foliage"
+            description: "Dwarf conifer with blue-green foliage and twisted branches"
         },
         {
             id: 4,
-            name: "Trident Maple",
+            name: "Chinese corkbark Elm",
             image: "/images/trees/tree4.jpg",
-            description: "Vigorous grower with distinctive three-pointed leaves and attractive bark"
+            description: "Deciduous tree with corky bark and small leaves, suitable for beginners"
         },
         {
             id: 5,
-            name: "Ficus Retusa",
+            name: "Trident maple",
             image: "/images/trees/tree5.jpg",
-            description: "Tropical tree with glossy leaves and aerial roots, ideal for indoor environments"
+            description: "Deciduous tree with three-lobed leaves and striking fall color"
         },
         {
             id: 6,
-            name: "Pine White",
+            name: "Zelkova",
             image: "/images/trees/tree6.jpg",
-            description: "Majestic conifer with long needles and dramatic branch structure"
+            description: "Deciduous tree with serrated leaves and attractive bark"
         },
         {
             id: 7,
-            name: "Azalea Satsuki",
+            name: "Crytomeria tanzu",
             image: "/images/trees/tree7.jpg",
-            description: "Flowering bonsai known for its spectacular spring blooms in various colors"
+            description: "Evergreen tree with tiered branches and needle-like leaves"
         },
         {
             id: 8,
-            name: "Weeping Willow",
+            name: "Crytomeria tanzu",
             image: "/images/trees/tree8.jpg",
-            description: "Graceful tree with cascading branches and delicate foliage"
+            description: "Evergreen tree with tiered branches and needle-like leaves"
         },
         {
             id: 9,
-            name: "Bougainvillea",
+            name: "Crytomeria tanzu",
             image: "/images/trees/tree9.jpg",
-            description: "Tropical beauty with vibrant bracts and thorny branches"
+            description: "Evergreen tree with tiered branches and needle-like leaves"
         },
         {
             id: 10,
-            name: "Olive Tree",
+            name: "Japanese Black Pine",
             image: "/images/trees/tree10.jpg",
-            description: "Mediterranean classic with silvery-green leaves and gnarled trunk"
+            description: "Classic bonsai with dark green needles and rugged bark"
         },
         {
             id: 11,
-            name: "Fukien Tea",
+            name: "Shiro-janome Japanese White Pine",
             image: "/images/trees/tree11.jpg",
-            description: "Compact tree with small white flowers and distinctive dark bark"
+            description: "Dwarf conifer with white-tipped needles and compact growth habit"
         },
         {
             id: 12,
-            name: "Jade Plant",
+            name: "Japanese Wisteria",
             image: "/images/trees/tree12.jpg",
-            description: "Succulent tree with thick trunk and oval-shaped leaves"
+            description: "Deciduous tree with cascading branches and fragrant flowers"
         }
     ];
 
@@ -132,7 +132,7 @@ function TreeCard({ tree }) {
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300">
                         <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <h3 className="text-white font-inknut text-xl mb-2">{tree.name}</h3>
+                            <h3 className="text-white font-inknut text-xl mb-2 text-center">{tree.name}</h3>
                             <p className="text-white text-center px-4">{tree.description}</p>
                         </div>
                     </div>
