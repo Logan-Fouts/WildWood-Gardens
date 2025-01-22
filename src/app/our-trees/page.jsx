@@ -76,6 +76,24 @@ export default function OurTrees() {
             name: "Japanese Wisteria",
             image: "/images/trees/tree12.jpg",
             description: "Deciduous tree with cascading branches and fragrant flowers"
+        },
+        {
+            id: 13,
+            name: "Trident Maple root over rock",
+            image: "/images/trees/tree13.jpg",
+            description: "Deciduous tree with three-lobed leaves and striking fall color grown over a rock"
+        },
+        {
+            id: 14,
+            name: "Kotohime Maple",
+            image: "/images/trees/tree14.jpg",
+            description: "Dwarf deciduous tree with small leaves and compact growth habit"
+        },
+        {
+            id: 15,
+            name: "Naruto-kaede Maple",
+            image: "/images/trees/tree15.jpg",
+            description: "Deciduous tree with green curling leaves and striking red fall color"
         }
     ];
 
