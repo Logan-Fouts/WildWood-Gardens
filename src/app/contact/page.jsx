@@ -61,7 +61,7 @@ export default function Contact() {
                                             href="mailto:info@wildwoodgardens.com"
                                             className="text-gray-700 hover:text-textblue transition-colors break-words"
                                         >
-                                            info@wildwoodgardens.com
+                                            Wildwoodgardens@myyahoo.com
                                         </a>
                                     </div>
                                 </div>
@@ -72,9 +72,9 @@ export default function Contact() {
                                     <div>
                                         <h2 className="text-xl font-semibold text-textblue mb-2">Hours</h2>
                                         <p className="text-gray-700 break-words">
-                                            Mon - Fri: 9am - 5pm<br />
-                                            Sat: 10am - 4pm<br />
-                                            Sun: Closed
+                                            Mon - Fri: By appointment<br />
+                                            Sat: 10am - 5pm<br />
+                                            Sun: 10am - 5pm<br />
                                         </p>
                                     </div>
                                 </div>
@@ -92,9 +92,9 @@ export default function Contact() {
                                     <a href="#" className="text-textblue hover:text-textblue/70 transition-colors">
                                         <FaInstagram size={24} />
                                     </a> */}
-                                    <a href="#" className="text-textblue hover:text-textblue/70 transition-colors">
+                                   {/*  <a href="#" className="text-textblue hover:text-textblue/70 transition-colors">
                                         <FaLinkedinIn size={24} />
-                                    </a>
+                                    </a> */}
                                 </div>
                             </div>
 
