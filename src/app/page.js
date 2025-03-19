@@ -3,6 +3,7 @@
 import Navbar from "@/components/navbar";
 import StoreHistory from "@/components/history";
 import HeroSection from "@/components/Hero";
+import ContactSection from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <div className="w-screen text-center">
           <HeroSection />
           <StoreHistory />
+          <ContactSection />
         </div>
       </div>
     </div>

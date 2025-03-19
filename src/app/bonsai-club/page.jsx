@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
 import Navbar from '@/components/navbar';
+import ContactSection from '@/components/Contact';
 
 export default function BonsaiClub({ showNavBar = true }) {
     const [event, setEvent] = useState(null);
@@ -124,6 +125,7 @@ export default function BonsaiClub({ showNavBar = true }) {
                     </div>
                 </div>
             </div>
+          <ContactSection />
         </div>
     );
 }

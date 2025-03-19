@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Navbar from '@/components/navbar';
 import H1 from '@/components/utils';
+import ContactSection from '@/components/Contact';
 
 // TODO: Move to data file so user can update easily.
 export default function OurTrees() {
@@ -133,6 +134,7 @@ export default function OurTrees() {
                     <TreeCard key={tree.id} tree={tree} />
                 ))}
             </div>
+          <ContactSection />
         </div>
     );
 }

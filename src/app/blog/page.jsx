@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { SignedIn } from "@clerk/nextjs";
 import { CldImage } from "next-cloudinary";
+import ContactSection from '@/components/Contact';
 
 export function Blog({ signedIn = false }) {
     const [posts, setPosts] = useState([]);
@@ -130,6 +131,7 @@ function BlogCard({ post, signedIn }) {
                     </div>
                 </div>
             </Link>
+            <ContactSection />
         </div>
     );
 }
