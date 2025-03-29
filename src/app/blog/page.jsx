@@ -45,13 +45,16 @@ export function Blog({ signedIn = false }) {
     }
 
     return (
-        <div className="flex flex-wrap w-full sm:px-36 sm:mt-48">
+        <div className="w-full sm:px-36 sm:mt-48">
             {!signedIn && (
-                <h1 className="text-black text-4xl py-8">Latest Posts</h1>
+                <h1 className="text-black text-4xl py-8 text-left">Latest Posts</h1>
             )}
-            {posts.map((post) => (
-                <BlogCard key={post.id} post={post} signedIn={signedIn} />
-            ))}
+            <div className="flex flex-wrap justify-center">
+                {posts.map((post) => (
+                    <BlogCard key={post.id} post={post} signedIn={signedIn} />
+                ))}
+                <ContactSection />
+            </div>
         </div>
     );
 }
@@ -131,7 +134,6 @@ function BlogCard({ post, signedIn }) {
                     </div>
                 </div>
             </Link>
-            <ContactSection />
         </div>
     );
 }
