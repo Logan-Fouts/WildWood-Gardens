@@ -7,11 +7,12 @@ import { useState, useEffect } from "react";
 
 export default function HeroSection() {
     const images = [
-        "/images/trees/tree1.jpg",
-        "/images/trees/tree2.jpg",
-        "/images/trees/tree3.jpg",
-        "/images/trees/tree4.jpg",
-        "/images/trees/tree5.jpg",
+        "/images/hero-images/hero1.jpg",
+        "/images/hero-images/hero2.jpg",
+        "/images/hero-images/hero3.jpg",
+        "/images/hero-images/hero4.jpg",
+        "/images/hero-images/hero5.jpg",
+        "/images/hero-images/hero6.jpg",
     ];
     const [currentImage, setCurrentImage] = useState(0);
     const [fade, setFade] = useState(true);
