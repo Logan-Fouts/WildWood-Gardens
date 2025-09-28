@@ -45,7 +45,7 @@ export default function BlogPost({ params }) {
                 <div className="w-full flex justify-center">
                     <Navbar />
                 </div>
-                <div className="container mt-12 md:mt-24 sm:px-6 md:px-8 2xl:px-64">
+                <div className="w-full flex justify-center mt-12 md:mt-24">
                     {isLoading ? (
                         <div className="flex items-center justify-center min-h-[60vh]">
                             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-textblue"></div>
@@ -55,11 +55,11 @@ export default function BlogPost({ params }) {
                             {error || 'Post not found'}
                         </div>
                     ) : (
-                        <article className="relative z-10 bg-white/90 rounded-lg p-4 sm:p-6 shadow-lg">
+                        <article className="relative z-10 bg-white/90 rounded-lg p-4 sm:p-6 shadow-lg max-w-4xl w-full mx-4 h-screen">
                             <Link href="/store-blog" className="text-xl text-blue-600">
                                 ← Back
                             </Link>
-                            <div className="relative w-full h-0 pb-[56.25%] mb-8">
+                            <div className="relative w-full h-0 pb-[56.25%] mb-8 mt-4">
                                 <CldImage
                                     src={post.image}
                                     alt={post.title}
