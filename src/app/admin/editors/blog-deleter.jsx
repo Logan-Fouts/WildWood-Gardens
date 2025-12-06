@@ -1,5 +1,5 @@
 "use client";
-import { Blog } from "@/app/blog/page";
+import Blog from "@/app/blog/page";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 
 export default function BlogDeleter() {
