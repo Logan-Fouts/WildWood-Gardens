@@ -6,7 +6,7 @@ import { SignedIn } from "@clerk/nextjs";
 import { CldImage } from "next-cloudinary";
 import ContactSection from '@/components/Contact';
 
-export function Blog({ signedIn = false }) {
+export default function Blog({ signedIn = false }) {
     const [posts, setPosts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
