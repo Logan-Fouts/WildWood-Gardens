@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Navbar from '@/components/navbar';
 import Link from 'next/link';
@@ -11,9 +11,12 @@ export default function BlogPost({ params }) {
     const [error, setError] = useState(null);
     const [slug, setSlug] = useState('');
 
+    // Use React.use() to unwrap the params promise
+    const unwrappedParams = React.use(params);
+
     useEffect(() => {
-        setSlug(params?.slug || '');
-    }, [params]);
+        setSlug(unwrappedParams?.slug || '');
+    }, [unwrappedParams]);
 
 
     useEffect(() => {
@@ -40,7 +43,7 @@ export default function BlogPost({ params }) {
     }, [slug]);
 
     return (
-        <div className="w-screen min-h-screen bg-white relative -mt-12 pb-8">
+        <div className="w-screen min-h-screen bg-white relative -mt-12 pb-12">
             <div className="relative sm:px-6 md:px-12 lg:px-16 xl:px-48 transition-all duration-300">
                 <div className="w-full flex justify-center">
                     <Navbar />
@@ -55,7 +58,8 @@ export default function BlogPost({ params }) {
                             {error || 'Post not found'}
                         </div>
                     ) : (
-                        <article className="relative z-10 bg-white/90 rounded-lg p-4 sm:p-6 shadow-lg max-w-4xl w-full mx-4 h-screen">
+                        <article className="relative z-10 bg-white/90 rounded-lg p-4 sm:p-6 shadow-lg max-w-4xl w-full mx-4 min-h-screen">
+                            <br></br>
                             <Link href="/store-blog" className="text-xl text-blue-600">
                                 ← Back
                             </Link>

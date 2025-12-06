@@ -90,7 +90,7 @@ function Center() {
         <div className="flex items-center text-black justify-center space-x-12 font-extralight">
             <Link href="/our-trees">Our Trees</Link>
             <Link href="/bonsai-club">Bonsai Club</Link>
-            <Link href="/">Blog (WIP)</Link>
+            <Link href="/store-blog">Blog</Link>
         </div>
     );
 }
