@@ -1,77 +1,117 @@
 import React from 'react';
 import Image from 'next/image';
 
-const ContentSection = ({ imageSrc, title, text1, imageOnRight = false }) => (
-    <div className={`flex flex-col ${imageOnRight ? 'md:flex-row-reverse' : 'md:flex-row'} mb-16 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl`}>
-        <div className="md:w-2/5 relative h-64 md:h-auto">
+const ContentSection = ({ imageSrc, title, summary, highlights, imageOnRight = false }) => (
+    <article className={`group mb-10 flex flex-col overflow-hidden rounded-xl border border-[#d9ccb9] bg-[#fbf8f1] shadow-[0_6px_16px_rgba(56,42,28,0.1)] transition-shadow duration-300 hover:shadow-[0_10px_24px_rgba(56,42,28,0.16)] ${imageOnRight ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+        <div className="relative h-64 md:h-auto md:w-2/5">
             <Image 
                 src={imageSrc} 
                 alt={title} 
                 width={500}
                 height={300}
-                className="object-cover w-full h-full transform transition-transform duration-700 hover:scale-105" 
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
             />
         </div>
-        <div className="md:w-3/5 p-8 bg-white">
-            <h2 className="text-2xl text-green-800 font-bold mb-4 border-b border-green-200 pb-2">{title}</h2>
-            <p className="text-gray-700 text-base leading-relaxed">{text1}</p>
+        <div className="bg-[#fbf8f1] p-8 text-left md:w-3/5">
+            <h2 className="mb-4 border-b border-[#dccdb8] pb-2 text-2xl font-bold text-[#3e2f22]">{title}</h2>
+            <p className="text-base leading-relaxed text-[#564638]">{summary}</p>
+            <ul className="mt-5 space-y-2 text-sm leading-relaxed text-[#4f4032] sm:text-base">
+                {highlights.map((highlight) => (
+                    <li key={highlight} className="flex items-start gap-2">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#8b6a49]" />
+                        <span>{highlight}</span>
+                    </li>
+                ))}
+            </ul>
         </div>
-    </div>
+    </article>
 );
 
 export default function StoreHistory() {
     return (
-        <div className="w-full bg-gradient-to-b from-gray-50 to-green-50 py-16">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-green-800 mb-4">Our Story</h1>
-                    <div className="w-24 h-1 bg-green-600 mx-auto mb-8"></div>
-                    <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Cultivating the ancient art of bonsai for over 69 years
+        <section className="relative w-full py-14 sm:py-16">
+            <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-[#9d8161] to-transparent" />
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-14 text-center">
+                    <h2 className="mb-4 text-4xl font-extrabold text-[#3e2f22] md:text-5xl">Our Story</h2>
+                    <div className="mx-auto mb-8 h-1 w-24 bg-[#8b6a49]"></div>
+                    <p className="mx-auto max-w-3xl text-lg text-[#5e4d3d]">
+                        A family bonsai business built on Japanese tradition, expert care, and decades of teaching.
                     </p>
                 </div>
-                
-                <div className="bg-white rounded-xl shadow-lg p-8 mb-16">
-                    <div className="flex flex-col md:flex-row gap-8">
-                        <div className="md:w-1/2">
-                            <p className="text-gray-700 leading-relaxed">
-                                Welcome to Wildwood Gardens, founded by Bonsai Master Anthony (Tony) Mihalic. Tony has been growing, teaching, and amazing audiences with his bonsai talents since 1946! He specializes in rock and forest styles of bonsai known as SAIKEI. With decades of experience, Tony has established himself as a master of these intricate Japanese horticultural art forms.
-                            </p>
-                        </div>
-                        <div className="md:w-1/2">
-                            <p className="text-gray-700 leading-relaxed">
-                                Now entering its 69th year, Wildwood Gardens continues through two generations of bonsai expertise. Frank specializes in the single tree styles associated with bonsai in the United States and routinely travels to the Far East to perfect his skills with various bonsai masters and growers. Tony, Joann, and Frank remain dedicated to sharing their knowledge, always available to answer questions and provide expert advice in the art of bonsai.
-                            </p>
-                        </div>
+
+                <div className="mb-10 grid grid-cols-1 gap-4 text-left sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="rounded-lg border border-[#dccdb8] bg-[#faf6ef] p-4 shadow-[0_4px_12px_rgba(56,42,28,0.08)]">
+                        <p className="text-xs uppercase tracking-[0.18em] text-[#7a6046]">Founded</p>
+                        <p className="mt-1 text-2xl font-bold text-[#3e2f22]">1946</p>
+                        <p className="mt-2 text-sm text-[#564638]">Serving bonsai enthusiasts for multiple generations.</p>
                     </div>
+                    <div className="rounded-lg border border-[#dccdb8] bg-[#faf6ef] p-4 shadow-[0_4px_12px_rgba(56,42,28,0.08)]">
+                        <p className="text-xs uppercase tracking-[0.18em] text-[#7a6046]">Specialty</p>
+                        <p className="mt-1 text-2xl font-bold text-[#3e2f22]">Saikei & Bonsai</p>
+                        <p className="mt-2 text-sm text-[#564638]">Rock, forest, and single-tree styling with practical guidance.</p>
+                    </div>
+                    <div className="rounded-lg border border-[#dccdb8] bg-[#faf6ef] p-4 shadow-[0_4px_12px_rgba(56,42,28,0.08)] sm:col-span-2 lg:col-span-1">
+                        <p className="text-xs uppercase tracking-[0.18em] text-[#7a6046]">Location</p>
+                        <p className="mt-1 text-2xl font-bold text-[#3e2f22]">Chardon, Ohio</p>
+                        <p className="mt-2 text-sm text-[#564638]">A local destination for trees, tools, and mentorship.</p>
+                    </div>
+                </div>
+                
+                <div className="mb-16 rounded-xl border border-[#d8cab8] bg-[#faf6ef] p-8 text-left shadow-[0_8px_20px_rgba(56,42,28,0.1)]">
+                    <h3 className="text-xl font-semibold text-[#3e2f22]">Built Through Two Generations</h3>
+                    <p className="mt-4 leading-relaxed text-[#564638]">
+                        Wildwood Gardens was founded by Bonsai Master Anthony (Tony) Mihalic, who began growing and teaching bonsai in 1946. His work in rock and forest compositions helped shape the store&apos;s reputation for craft and authenticity.
+                    </p>
+                    <p className="mt-4 leading-relaxed text-[#564638]">
+                        Today, the business continues through the next generation with a focus on healthy trees, refined design, and practical instruction for both newcomers and longtime collectors.
+                    </p>
                 </div>
 
                 <ContentSection
                     imageSrc="/images/about-us/awards.jpg"
                     title="Awards and Recognition"
-                    text1="In 1999, Tony received an award from The Korean National Bonsai Association and the Midwest Bonsai Association for his 53 years of teaching and practicing the art of bonsai. In 2001, he was awarded the Bonsai Spotlight Award from Bonsai Online Magazine, honoring masters from around the world. In 2015, Tony celebrated his 69th year practicing the ancient art of bonsai."
+                    summary="Wildwood has earned respected recognition across regional and international bonsai circles."
+                    highlights={[
+                        '1999: Recognized by Korean National and Midwest Bonsai associations.',
+                        '2001: Received Bonsai Online Magazine\'s Spotlight Award.',
+                        '2015: Marked 69 years of bonsai practice.'
+                    ]}
                 />
 
                 <ContentSection
                     imageSrc="/images/about-us/publishing.png"
                     title="Ichiban Publishing"
-                    text1="In 1979, Frank Mihalic founded Ichiban Publishing, a company dedicated to bonsai-related materials. He wrote and published The Art of Bonsai-CD ROM (the first CD on bonsai in the world!), The Art of Bonsai-VHS Video & DVD, The Art of Bonsai-Book, Bonsai Screen Saver Computer CD ROM, Bonsai Online Magazine-Internet Magazine & Back Issue CD ROM (the first internet bonsai magazine in the world!), and Bonsai for Kids-Childrens Instructional Bonsai Book in multiple languages."
+                    summary="Frank Mihalic helped expand bonsai education through books, video, and early digital media."
+                    highlights={[
+                        'Founded Ichiban Publishing in 1979.',
+                        'Released The Art of Bonsai in CD-ROM, video, and book formats.',
+                        'Published early online bonsai content and youth learning resources.'
+                    ]}
                     imageOnRight={true}
                 />
 
                 <ContentSection
                     imageSrc="/images/about-us/global.jpg"
                     title="Global Recognition"
-                    text1="Franks bonsai trees have been recognized globally, with his trees selected as one of the top one hundred bonsai trees in the world in 1999, 2001, and 2006 by Japan Airlines & the Nippon Bonsai Associations. In 2000, he was awarded a special membership in the Cheju Bonsai Growers Association in Korea."
+                    summary="Wildwood trees have been selected and honored in major international bonsai programs."
+                    highlights={[
+                        'Top 100 world bonsai selections in 1999, 2001, and 2006.',
+                        'Recognized by Japan Airlines, Nippon Bonsai Associations, and Korean growers.'
+                    ]}
                 />
 
                 <ContentSection
                     imageSrc="/images/about-us/magazine.png"
                     title="Pioneering Bonsai Education"
-                    text1="Frank also founded the first bonsai magazine on the internet in 2001 and published the first bonsai book and CD ROM for children. He has been elected to the Board of Directors of the American Bonsai Society and Bonsai Clubs International multiple times."
+                    summary="Education remains central to Wildwood, from early web publishing to beginner-friendly instruction."
+                    highlights={[
+                        'Launched one of the first internet bonsai magazines in 2001.',
+                        'Created children\'s bonsai learning resources and served on major bonsai boards.'
+                    ]}
                     imageOnRight={true}
                 />
             </div>
-        </div>
+        </section>
     );
 }
