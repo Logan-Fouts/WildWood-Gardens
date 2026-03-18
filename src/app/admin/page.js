@@ -1,6 +1,7 @@
 "use client";
 
 import { SignedIn, SignedOut, SignInButton, SignOutButton } from "@clerk/nextjs";
+import Link from "next/link";
 import { useState } from "react";
 import { BlogEditor } from "./editors/blog-editor";
 import ClubEditor from "./editors/club-editor";
@@ -48,7 +49,7 @@ export default function AdminPage() {
                         <h1 className="text-3xl pb-8 font-bold">Wild Wood Gardens Management Dashboard</h1>
                         <div className="space-x-4 p-4">
                             <SignInButton className="underline text-gray-800 hover:text-gray-600 transition-colors" />
-                            <a href="/" className="underline text-gray-800 hover:text-gray-600 transition-colors">Go Home</a>
+                            <Link href="/" className="underline text-gray-800 hover:text-gray-600 transition-colors">Go Home</Link>
                         </div>
                     </div>
                 </div>

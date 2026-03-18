@@ -1,3 +1,5 @@
+import BlogPost from './page';
+
 export default async function BlogPostPage({ params }) {
-    return <BlogPost params={{ slug: params.slug }} />;
+    return <BlogPost params={params} />;
 }

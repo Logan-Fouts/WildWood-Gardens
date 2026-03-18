@@ -45,16 +45,16 @@ export default function Blog({ signedIn = false }) {
     }
 
     return (
-        <div className="w-full sm:px-36 sm:mt-48">
+        <div className="w-full pt-6 sm:pt-8">
             {!signedIn && (
-                <h1 className="text-black text-4xl py-8 text-left">Latest Posts</h1>
+                <h2 className="py-6 text-left text-3xl font-bold text-[#3e2f22]">Latest Posts</h2>
             )}
-            <div className="flex flex-wrap justify-center">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 {posts.map((post) => (
                     <BlogCard key={post.id} post={post} signedIn={signedIn} />
                 ))}
-                <ContactSection />
             </div>
+            <ContactSection />
         </div>
     );
 }
@@ -87,7 +87,7 @@ function BlogCard({ post, signedIn }) {
     }
 
     return (
-        <div className="w-screen">
+        <div className="w-full">
             <SignedIn>
                 {signedIn && (
                     <button onClick={() => deletePost(post.title)} className="rounded bg-red-500 p-1 mb-4 hover:ring">Delete</button>
@@ -99,8 +99,7 @@ function BlogCard({ post, signedIn }) {
                 </div>
             )}
             <Link href={`/blog/${post.slug}`} className="w-full">
-                <div className="bg-white rounded-lg shadow-md overflow-hidden
-                    transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer mb-8">
+                <article className="mb-2 cursor-pointer overflow-hidden rounded-lg border border-[#d8cab8] bg-[#faf6ef] shadow-[0_6px_16px_rgba(56,42,28,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_24px_rgba(56,42,28,0.16)]">
                     <div className="relative h-48 md:h-56">
                         <CldImage
                             src={post.image}
@@ -112,27 +111,26 @@ function BlogCard({ post, signedIn }) {
                     </div>
                     <div className="p-4">
                         <div className="flex justify-between items-center mb-2">
-                            <h3 className="font-inknut text-lg font-semibold text-textblue">
+                            <h3 className="text-lg font-semibold text-[#3e2f22]">
                                 {post.title}
                             </h3>
-                            <span className="text-sm text-gray-500">
+                            <span className="text-sm text-[#7a6046]">
                                 {new Date(post.date).toLocaleDateString()}
                             </span>
                         </div>
-                        <p className="text-gray-600 text-sm mb-2">
+                        <p className="mb-2 text-sm text-[#564638]">
                             {post.preview}
                         </p>
                         <div className="flex justify-between items-center">
-                            <span className="text-sm text-gray-500">
+                            <span className="text-sm text-[#7a6046]">
                                 By {post.author}
                             </span>
-                            <span className="text-textblue hover:text-textblue/80
-                                transition-colors text-sm font-semibold">
+                            <span className="text-sm font-semibold text-[#6b5238] transition-colors hover:text-[#4f3f2e]">
                                 Read More →
                             </span>
                         </div>
                     </div>
-                </div>
+                </article>
             </Link>
         </div>
     );

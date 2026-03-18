@@ -1,67 +1,57 @@
 import Navbar from "@/components/navbar";
 import Image from "next/image";
+import ContactSection from "@/components/Contact";
 
 export default function Shop() {
     return (
-        <div className="w-screen min-h-screen bg-white relative">
-            <Image
-                src="/images/oldtree.png"
-                alt="Background"
-                width={670}
-                height={500}
-                className="absolute top-0 right-0 z-0"
-                priority
-            />
+        <main className="relative min-h-screen overflow-hidden bg-[#f3efe6]">
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(132,104,73,0.08),transparent_18%,transparent_82%,rgba(132,104,73,0.08))]" />
+            <div className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:radial-gradient(#000_1px,transparent_1px)] [background-size:4px_4px]" />
 
-            <div className="relative px-4 sm:px-6 md:px-12 lg:px-24 xl:px-48 transition-all duration-300">
-                <div className="w-full flex justify-center">
-                    <Navbar />
-                </div>
+            <Navbar />
 
-                <div className="container md:mt-36 px-4 sm:px-6 md:px-8 mt-56 pb-8">
-                    <div className="relative z-10 flex flex-col w-3/4">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-textblue mb-6">
-                            Shop Coming Soon
-                        </h1>
+            <section className="relative z-10 mx-auto max-w-5xl px-4 pb-10 pt-28 sm:px-8 lg:pt-32">
+                <header className="text-left">
+                    <p className="text-xs uppercase tracking-[0.22em] text-[#7a6046]">Online Store</p>
+                    <h1 className="mt-3 text-4xl font-extrabold text-[#3e2f22] md:text-5xl lg:text-6xl">
+                        Shop Coming Soon
+                    </h1>
+                </header>
 
-                        <div className="bg-white/90 rounded-lg p-8 shadow-lg max-w-2xl">
-                            <p className="text-gray-700 text-lg mb-4">
-                                Our online shop is currently under construction.
-                            </p>
-                            <p className="text-gray-700">
-                                In the meantime, please visit us at our physical location:
-                            </p>
+                <article className="mt-8 rounded-xl border border-[#d8cab8] bg-[#faf6ef] p-6 shadow-[0_8px_20px_rgba(56,42,28,0.1)] sm:p-8">
+                    <p className="text-lg leading-relaxed text-[#564638]">
+                        Our online shop is currently under construction.
+                    </p>
+                    <p className="mt-3 leading-relaxed text-[#564638]">
+                        In the meantime, please visit us at our Chardon location or call for current inventory.
+                    </p>
 
-                            <address className="mt-6 text-gray-700 not-italic">
-                                14488 rock creek rd<br />
-                                Chardon, Ohio 44024
-                            </address>
+                    <address className="mt-6 not-italic text-[#564638]">
+                        14488 Rock Creek Rd
+                        <br />
+                        Chardon, Ohio 44024
+                    </address>
 
-                            <div className="mt-6">
-                                <a
-                                    href="tel:440-749-4252"
-                                    className="text-textblue hover:underline"
-                                >
-                                    440-749-4252
-                                </a>
-                            </div>
-
-                            <div className="mt-8">
-                                <a
-                                    href={`https://maps.google.com/?q=${encodeURIComponent(
-                                        '14488 rock creek rd, Chardon, Ohio 44024'
-                                    )}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-block bg-textblue text-white px-6 py-3 rounded-lg hover:bg-textblue/90 transition-colors"
-                                >
-                                    Get Directions
-                                </a>
-                            </div>
-                        </div>
+                    <div className="mt-5">
+                        <a href="tel:440-749-4252" className="font-medium text-[#6b5238] underline-offset-4 hover:underline">
+                            440-749-4252
+                        </a>
                     </div>
-                </div>
-            </div>
-        </div>
+
+                    <div className="mt-8">
+                        <a
+                            href={`https://maps.google.com/?q=${encodeURIComponent('14488 rock creek rd, Chardon, Ohio 44024')}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block rounded-md bg-[#4f3f2e] px-6 py-3 text-white transition-colors hover:bg-[#3f3325]"
+                        >
+                            Get Directions
+                        </a>
+                    </div>
+                </article>
+            </section>
+
+            <ContactSection />
+        </main>
     );
 }

@@ -1,31 +1,32 @@
 import React from 'react';
 import Image from 'next/image';
 
-const ContentSection = ({ imageSrc, title, summary, highlights, imageOnRight = false }) => (
-    <article className={`group mb-10 flex flex-col overflow-hidden rounded-xl border border-[#d9ccb9] bg-[#fbf8f1] shadow-[0_6px_16px_rgba(56,42,28,0.1)] transition-shadow duration-300 hover:shadow-[0_10px_24px_rgba(56,42,28,0.16)] ${imageOnRight ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
-        <div className="relative h-64 md:h-auto md:w-2/5">
-            <Image 
-                src={imageSrc} 
-                alt={title} 
-                width={500}
-                height={300}
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
-            />
-        </div>
-        <div className="bg-[#fbf8f1] p-8 text-left md:w-3/5">
-            <h2 className="mb-4 border-b border-[#dccdb8] pb-2 text-2xl font-bold text-[#3e2f22]">{title}</h2>
-            <p className="text-base leading-relaxed text-[#564638]">{summary}</p>
-            <ul className="mt-5 space-y-2 text-sm leading-relaxed text-[#4f4032] sm:text-base">
-                {highlights.map((highlight) => (
-                    <li key={highlight} className="flex items-start gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#8b6a49]" />
-                        <span>{highlight}</span>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    </article>
-);
+const milestones = [
+    {
+        year: '1999',
+        title: 'Awards and Recognition',
+        imageSrc: '/images/about-us/awards.jpg',
+        summary: 'Recognized by Korean National and Midwest bonsai associations for decades of teaching and craft.'
+    },
+    {
+        year: '1979+',
+        title: 'Ichiban Publishing',
+        imageSrc: '/images/about-us/publishing.png',
+        summary: 'Expanded bonsai education through books, video, and early digital publishing resources.'
+    },
+    {
+        year: '1999-2006',
+        title: 'Global Recognition',
+        imageSrc: '/images/about-us/global.jpg',
+        summary: 'Trees were selected in major international programs and recognized by leading bonsai groups.'
+    },
+    {
+        year: '2001+',
+        title: 'Education Leadership',
+        imageSrc: '/images/about-us/magazine.png',
+        summary: 'Pioneered online bonsai publishing and contributed to educational leadership across bonsai organizations.'
+    }
+];
 
 export default function StoreHistory() {
     return (
@@ -68,49 +69,35 @@ export default function StoreHistory() {
                     </p>
                 </div>
 
-                <ContentSection
-                    imageSrc="/images/about-us/awards.jpg"
-                    title="Awards and Recognition"
-                    summary="Wildwood has earned respected recognition across regional and international bonsai circles."
-                    highlights={[
-                        '1999: Recognized by Korean National and Midwest Bonsai associations.',
-                        '2001: Received Bonsai Online Magazine\'s Spotlight Award.',
-                        '2015: Marked 69 years of bonsai practice.'
-                    ]}
-                />
+                <div className="rounded-xl border border-[#d8cab8] bg-[#faf6ef] p-5 shadow-[0_8px_20px_rgba(56,42,28,0.1)] sm:p-7">
+                    <div className="mb-6 text-left">
+                        <h3 className="text-2xl font-semibold text-[#3e2f22]">Milestones</h3>
+                        <p className="mt-2 text-sm text-[#5e4d3d] sm:text-base">
+                            A concise look at major moments in Wildwood Gardens&apos; history.
+                        </p>
+                    </div>
 
-                <ContentSection
-                    imageSrc="/images/about-us/publishing.png"
-                    title="Ichiban Publishing"
-                    summary="Frank Mihalic helped expand bonsai education through books, video, and early digital media."
-                    highlights={[
-                        'Founded Ichiban Publishing in 1979.',
-                        'Released The Art of Bonsai in CD-ROM, video, and book formats.',
-                        'Published early online bonsai content and youth learning resources.'
-                    ]}
-                    imageOnRight={true}
-                />
-
-                <ContentSection
-                    imageSrc="/images/about-us/global.jpg"
-                    title="Global Recognition"
-                    summary="Wildwood trees have been selected and honored in major international bonsai programs."
-                    highlights={[
-                        'Top 100 world bonsai selections in 1999, 2001, and 2006.',
-                        'Recognized by Japan Airlines, Nippon Bonsai Associations, and Korean growers.'
-                    ]}
-                />
-
-                <ContentSection
-                    imageSrc="/images/about-us/magazine.png"
-                    title="Pioneering Bonsai Education"
-                    summary="Education remains central to Wildwood, from early web publishing to beginner-friendly instruction."
-                    highlights={[
-                        'Launched one of the first internet bonsai magazines in 2001.',
-                        'Created children\'s bonsai learning resources and served on major bonsai boards.'
-                    ]}
-                    imageOnRight={true}
-                />
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                        {milestones.map((item) => (
+                            <article key={item.title} className="group flex gap-4 rounded-lg border border-[#ddcfbc] bg-[#fdfaf4] p-4 transition-colors hover:bg-[#f8f1e4]">
+                                <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-[#d8cab8]">
+                                    <Image
+                                        src={item.imageSrc}
+                                        alt={item.title}
+                                        fill
+                                        sizes="80px"
+                                        className="object-cover"
+                                    />
+                                </div>
+                                <div className="text-left">
+                                    <p className="text-xs uppercase tracking-[0.2em] text-[#7a6046]">{item.year}</p>
+                                    <h4 className="mt-1 text-lg font-semibold text-[#3e2f22]">{item.title}</h4>
+                                    <p className="mt-1 text-sm leading-relaxed text-[#564638]">{item.summary}</p>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </div>
             </div>
         </section>
     );
